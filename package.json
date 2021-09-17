@@ -1,0 +1,23 @@
+{
+  "name": "study_github_action",
+  "version": "1.0.0",
+  "description": "기여중인 오픈소스 [vue-camp](https://github.com/joshua1988/vue-camp)의 [#102](https://github.com/joshua1988/vue-camp/issues/102) 번째 이슈를 해결하기 위해 Github Actions에 대해 공부하는 repository",
+  "main": "index.js",
+  "dependencies": {
+    "all-contributors-cli": "^6.20.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zwonlala/study-Github-Action.git"
+  },
+  "author": "zwonlala",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zwonlala/study-Github-Action/issues"
+  },
+  "homepage": "https://github.com/zwonlala/study-Github-Action#readme"
+}
