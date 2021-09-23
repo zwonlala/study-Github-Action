@@ -1,8 +1,8 @@
 name: print PR Info
 
 on:
-  push:
-    branches: [master]
+  pull_request:
+    types: [ created ]
 
 jobs:
   print:
