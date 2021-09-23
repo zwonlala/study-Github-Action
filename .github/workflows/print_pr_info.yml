@@ -1,0 +1,36 @@
+name: print PR Info
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  print:
+    runs-on: ubuntu-latest
+#     permissions:
+#       issues: write
+#       pull-requests: write
+    steps:
+#     - uses: actions/first-interaction@v1
+#       with:
+#         repo-token: ${{ secrets.GITHUB_TOKEN }}
+#         issue-message: 'Message that will be displayed on users first issue'
+#         pr-message: 'Message that will be displayed on users first pull request'
+    - name: Print PR Infos
+      run: |
+        # print user name
+        echo ${{ github.event.schedule.user.login }}
+        echo ${{ github.event.issue.user.login }}
+        echo ${{ github.event.pull_event.user.login }}
+        
+        # print issue / PR number
+        echo ${{ github.event.number }}
+        echo ${{ github.event.issue.number }}
+        echo ${{ github.event.pull_request.number }}
+        
+        # print label name
+        echo ${{ github.event.issue.labels[0].name }}
+        echo ${{ github.event.pull_request.labels[0].name }}
+        
+    
+    
