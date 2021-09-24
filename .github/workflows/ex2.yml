@@ -1,0 +1,17 @@
+name: github checkout
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 다른 사람이 만든 actions를 사용할 때 uses 사용
+      - uses: actions/checkout@v2 # 이 action은 해당 runner를 저장소를 클론하고 체크아웃하여 다음 명령어들에서 사용할 수 있도록 하는 명령어
+
+      - name: Run pwd
+        run: pwd
+
+      - name: Run ls -al
+        run: ls -al
