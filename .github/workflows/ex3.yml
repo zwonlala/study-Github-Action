@@ -20,7 +20,7 @@ jobs:
           GITHUB_EVENT_COMMITS_AUTHOR_USERNAME: ${{ github.event.commits.author.username }}
           
           GITHUB_EVENT_REPOSITORY_LABELS_URL: ${{ github.event.repository.labels_url }}
-          GITHUB_EVENT_REPOSITORY_OWNER: ${{ github.event.repository.owner }}
+          GITHUB_EVENT_REPOSITORY_OWNER: ${{ toJson(github.event.repository.owner) }}
           
         run: |
           echo "github.acitor: $GITHUB_ACTOR"
