@@ -15,3 +15,8 @@ jobs:
 
       - name: Run ls -al
         run: ls -al
+        
+      - name: Print github
+        env:
+          GITHUB: ${{ toJson(github) }}
+        run: echo "$GITHUB"
