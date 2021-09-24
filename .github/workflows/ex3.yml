@@ -1,0 +1,26 @@
+name: github action context variable
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "context"
+        env: 
+         COMMIT_ID: ${{ github.sha }}
+        run: echo "Commit id:$COMMIT_ID"
+          
+      - name: print github context 
+        run: |
+          echo "github.actor: ${{ github.actor }}"
+          
+          echo "github.event.commits.author.name: ${{ github.event.commits.author.name }}
+          echo "github.event.commits.author.username: ${{ github.event.commits.author.username }}
+
+          echo "github.event.commits.author.username: ${{ github.event.repository.labels_url }}
+          echo "github.event.commits.author.username: ${{ toJson(github.event.repository.owner) }}
+          # echo "github.event.commits.author.username: ${{ github.event.repository.}}
+
+        
