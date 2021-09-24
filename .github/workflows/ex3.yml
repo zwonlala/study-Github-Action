@@ -12,28 +12,15 @@ jobs:
          COMMIT_ID: ${{ github.sha }}
         run: echo "Commit id:$COMMIT_ID"
           
-      - name: Dump GitHub context
-        env:
-          GITHUB_CONTEXT: ${{ toJSON(github) }} # github 안에 있는 데이터를 toJson() 함수를 통해 보기 좋게 풀어내는 코드. 즉 이 코드는 github에서 제공하는 전체 콘텍스트에 대한 것을 출력하는 예제
-        run: echo "$GITHUB_CONTEXT"
+      - name: print github context 
+        run: |
+          echo "github.actor: ${{ github.actor }}"
+          
+          echo "github.event.commits.author.name: ${{ github.event.commits.author.name }}
+          echo "github.event.commits.author.username: ${{ github.event.commits.author.username }}
+
+          echo "github.event.commits.author.username: ${{ github.event.repository.labels_url }}
+          echo "github.event.commits.author.username: ${{ toJson(github.event.repository.owner) }}
+          # echo "github.event.commits.author.username: ${{ github.event.repository.}}
+
         
-      - name: Dump job context
-        env:
-          JOB_CONTEXT: ${{ toJSON(job) }}
-        run: echo "$JOB_CONTEXT"
-      - name: Dump steps context
-        env:
-          STEPS_CONTEXT: ${{ toJSON(steps) }}
-        run: echo "$STEPS_CONTEXT"
-      - name: Dump runner context
-        env:
-          RUNNER_CONTEXT: ${{ toJSON(runner) }}
-        run: echo "$RUNNER_CONTEXT"
-      - name: Dump strategy context
-        env:
-          STRATEGY_CONTEXT: ${{ toJSON(strategy) }}
-        run: echo "$STRATEGY_CONTEXT"
-      - name: Dump matrix context
-        env:
-          MATRIX_CONTEXT: ${{ toJSON(matrix) }}
-        run: echo "$MATRIX_CONTEXT"
