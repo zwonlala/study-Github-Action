@@ -13,13 +13,23 @@ jobs:
         run: echo "Commit id:$COMMIT_ID"
           
       - name: print github context 
-        run: |
-          echo "github.actor: ${{ github.actor }}"
+        env:
+          GITHUB_ACTOR: ${{ github.actor }}
           
-          echo "github.event.commits.author.name: ${{ github.event.commits.author.name }}
-          echo "github.event.commits.author.username: ${{ github.event.commits.author.username }}
-
-          echo "github.event.commits.author.username: ${{ github.event.repository.labels_url }}
-          echo "github.event.commits.author.username: ${{ toJson(github.event.repository.owner) }}
-
+          GITHUB_EVENT_COMMITS_AUTHOR_NAME: ${{ github.event.commits.author.name }}
+          GITHUB_EVENT_COMMITS_AUTHOR_USERNAME: ${{ github.event.commits.author.username }}
+          
+          GITHUB_EVENT_REPOSITORY_LABELS_URL: ${{ github.event.repository.labels_url }}
+          GITHUB_EVENT_REPOSITORY_OWNER: ${{ github.event.repository.owner }}
+          
+        run: |
+          echo "github.acitor: $GITHUB_ACTOR"
+          
+          echo "github.event.commits.author.name: $GITHUB_EVENT_COMMITS_AUTHOR_NAME"
+          echo "github.event.commits.author.username: $GITHUB_EVENT_COMMITS_AUTHOR_USERNAME"
+          
+          echo "github.event.repository.lables_url: $GITHUB_EVENT_REPOSITORY_LABELS_URL"
+          echo "github.event.repository.owner: $GITHUB_EVENT_REPOSITORY_OWNER"
+          
+        
         
