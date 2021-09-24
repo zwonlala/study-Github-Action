@@ -21,6 +21,5 @@ jobs:
 
           echo "github.event.commits.author.username: ${{ github.event.repository.labels_url }}
           echo "github.event.commits.author.username: ${{ toJson(github.event.repository.owner) }}
-          # echo "github.event.commits.author.username: ${{ github.event.repository.}}
 
         
